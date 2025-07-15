@@ -23,7 +23,7 @@ export default function Login() {
   return (
     <div className="p-8 max-w-md mx-auto">
       <div className="flex-col justify-center items-center mt-10">
-        <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center text-blue-600 animate-bounce">Login</h2>
         {err && <p className="text-red-500 text-sm">{err}</p>}
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <input
