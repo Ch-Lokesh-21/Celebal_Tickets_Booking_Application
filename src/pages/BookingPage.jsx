@@ -57,7 +57,7 @@ export default function BookingPage() {
   };
 
   const proceedToPay = () => {
-    const amount = selectedSeats.length * 200; // Rs. 200 per ticket
+    const amount = selectedSeats.length * 300;
     initiatePayment({
       amount,
       bookingDetails: {
