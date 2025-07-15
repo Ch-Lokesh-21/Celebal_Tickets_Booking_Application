@@ -12,7 +12,7 @@ export default function Navbar() {
         {user ? (
           <>
             <Link to="/dashboard" className="mr-4">Dashboard</Link>
-            <button onClick={logout} className="bg-red-500 px-4 py-3 rounded">Logout</button>
+            <Link onClick={logout} to="/" className="bg-red-500 px-4 py-3 rounded cursor-pointer">Logout</Link>
           </>
         ) : (
           <>
