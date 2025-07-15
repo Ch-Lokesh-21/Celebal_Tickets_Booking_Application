@@ -12,12 +12,12 @@ export default function Navbar() {
         {user ? (
           <>
             <Link to="/dashboard" className="mr-4">Dashboard</Link>
-            <button onClick={logout} className="bg-red-500 px-3 py-1 rounded">Logout</button>
+            <button onClick={logout} className="bg-red-500 px-4 py-3 rounded">Logout</button>
           </>
         ) : (
           <>
             <Link to="/login" className="mr-4">Login</Link>
-            <Link to="/register" className="bg-green-500 px-3 py-1 rounded">Register</Link>
+            <Link to="/register" className="bg-green-500 px-4 py-3 rounded">Register</Link>
           </>
         )}
       </div>
