@@ -49,7 +49,7 @@ export default function ShowDetails() {
         {/* Select Seats Button */}
         <button
           onClick={() => navigate("/book", { state: { show } })}
-          className="mt-6 w-full md:w-auto bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 cursor-pointer"
+          className="mt-6 w-full md:w-auto bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 cursor-pointer duration-300"
         >
           Select Seats
         </button>
