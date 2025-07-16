@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/show/:id" element={<ProtectedRoute><ShowDetails /></ProtectedRoute>} />
         <Route path="/book" element={<ProtectedRoute><BookingPage /></ProtectedRoute>} />
-        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/myBookings" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/success" element={<ProtectedRoute><Success /></ProtectedRoute>} />
       </Routes>
     </Router>
