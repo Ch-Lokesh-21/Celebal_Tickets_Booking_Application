@@ -2,7 +2,7 @@ import React from "react";
 
 function Loader() {
   return (
-    <div className="h-full flex justify-center items-center">
+    <div className="h-full flex justify-center items-center text-9xl mt-10">
       <div role="status">
         <svg
           aria-hidden="true"
