@@ -23,17 +23,19 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-white to-blue-100 px-4">
-      <div className="w-full max-w-md bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8">
-        <h2 className="text-3xl font-extrabold text-center text-blue-600 mb-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-white to-blue-100 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-6 sm:p-8">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-blue-600 mb-6">
           Welcome Back 👋
         </h2>
 
-        {err && <p className="text-red-500 text-sm text-center mb-2">{err}</p>}
+        {err && (
+          <p className="text-red-500 text-sm text-center mb-2">{err}</p>
+        )}
 
         <form onSubmit={handleLogin} className="flex flex-col gap-5">
           <input
-            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition text-sm sm:text-base"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -44,7 +46,7 @@ export default function Login() {
           {/* Password Input with Show/Hide Icon */}
           <div className="relative">
             <input
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition pr-10"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition pr-10 text-sm sm:text-base"
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -55,13 +57,17 @@ export default function Login() {
               className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500"
               onClick={() => setShowPassword((prev) => !prev)}
             >
-              {showPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
+              {showPassword ? (
+                <AiOutlineEyeInvisible size={20} />
+              ) : (
+                <AiOutlineEye size={20} />
+              )}
             </div>
           </div>
 
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-md cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-md cursor-pointer text-sm sm:text-base"
           >
             Login
           </button>
