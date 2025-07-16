@@ -17,8 +17,21 @@ export default function Mybookings() {
         where("userId", "==", user.uid)
       );
       const snapshot = await getDocs(q);
-      setBookings(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      // Sort by date + time (latest first)
+      const sorted = data.sort((a, b) => {
+        const dateTimeA = new Date(`${a.date} ${a.time}`);
+        const dateTimeB = new Date(`${b.date} ${b.time}`);
+        return dateTimeB - dateTimeA; // latest first
+      });
+
+      setBookings(sorted);
     };
+
     if (user) fetchBookings();
   }, [user]);
 
