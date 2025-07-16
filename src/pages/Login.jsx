@@ -3,11 +3,13 @@ import { useState } from "react";
 import { auth } from "../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -21,31 +23,56 @@ export default function Login() {
   };
 
   return (
-    <div className="p-8 max-w-md mx-auto">
-      <div className="flex-col justify-center items-center mt-10">
-        <h2 className="text-2xl font-bold mb-4 text-center text-blue-600 animate-bounce">Login</h2>
-        {err && <p className="text-red-500 text-sm">{err}</p>}
-        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-white to-blue-100 px-4">
+      <div className="w-full max-w-md bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8">
+        <h2 className="text-3xl font-extrabold text-center text-blue-600 mb-6">
+          Welcome Back 👋
+        </h2>
+
+        {err && <p className="text-red-500 text-sm text-center mb-2">{err}</p>}
+
+        <form onSubmit={handleLogin} className="flex flex-col gap-5">
           <input
-            className="p-2 border rounded"
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder="Email Address"
             required
           />
-          <input
-            className="p-2 border rounded"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-          <button className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600">
+
+          {/* Password Input with Show/Hide Icon */}
+          <div className="relative">
+            <input
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition pr-10"
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+            />
+            <div
+              className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-md cursor-pointer"
+          >
             Login
           </button>
         </form>
+
+        <p className="mt-6 text-sm text-center text-gray-600">
+          Don’t have an account?{" "}
+          <a href="/register" className="text-blue-600 hover:underline">
+            Register
+          </a>
+        </p>
       </div>
     </div>
   );
