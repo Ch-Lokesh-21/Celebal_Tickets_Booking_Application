@@ -25,25 +25,43 @@ export default function Dashboard() {
   const downloadTicket = async (booking) => {
     const doc = new jsPDF();
 
-    // Generate QR Code from transactionId
+    // Generate QR Code for transactionId
     const qrDataUrl = await QRCode.toDataURL(booking.transactionId);
 
+    // Title
     doc.setFontSize(18);
     doc.text("Movie Ticket", 20, 20);
 
+    // Details (Left Side)
     doc.setFontSize(12);
-    doc.text(`Movie: ${booking.showTitle}`, 20, 40);
-    doc.text(`Date: ${booking.date}`, 20, 50);
-    doc.text(`Time: ${booking.time}`, 20, 60);
-    doc.text(`Seats: ${booking.seats.join(", ")}`, 20, 70);
-    doc.text(`Transaction ID: ${booking.transactionId}`, 20, 80);
-    doc.text(`Booked On: ${new Date(booking.createdAt).toLocaleString()}`, 20, 90);
+    let y = 40;
+    const lineHeight = 10;
 
-    // QR Code
-    doc.text("Scan the QR Code: ", 20, 105);
-    doc.addImage(qrDataUrl, "PNG", 20, 110, 50, 50);
+    doc.text(`Movie: ${booking.showTitle}`, 20, y);
+    y += lineHeight;
+    doc.text(`Date: ${booking.date}`, 20, y);
+    y += lineHeight;
+    doc.text(`Time: ${booking.time}`, 20, y);
+    y += lineHeight;
+    doc.text(`Seats: ${booking.seats.join(", ")}`, 20, y);
+    y += lineHeight;
+    doc.text(`Transaction ID:`, 20, y);
+    y += 5;
+    doc.setFont("courier", "normal"); // monospaced for better alignment
+    doc.text(`${booking.transactionId}`, 20, y);
+    y += lineHeight + 5;
+    doc.setFont("helvetica", "normal");
+    doc.text(
+      `Booked On: ${new Date(booking.createdAt).toLocaleString()}`,
+      20,
+      y
+    );
 
-    // Save PDF
+    // QR Code (Right Side)
+    doc.text("Scan to verify", 140, 40);
+    doc.addImage(qrDataUrl, "PNG", 140, 45, 50, 50);
+
+    // Save the PDF
     doc.save(`${booking.showTitle}_Ticket.pdf`);
   };
 
