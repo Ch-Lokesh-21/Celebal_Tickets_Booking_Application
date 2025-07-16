@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import jsPDF from "jspdf";
 import QRCode from "qrcode";
 
-export default function Dashboard() {
+export default function Mybookings() {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
 
