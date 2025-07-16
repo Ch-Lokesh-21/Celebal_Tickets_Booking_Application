@@ -44,7 +44,7 @@ export default function Mybookings() {
     doc.text(`Movie: ${booking.showTitle}`, 20, y); y += lineHeight;
     doc.text(`Date: ${booking.date}`, 20, y); y += lineHeight;
     doc.text(`Time: ${booking.time}`, 20, y); y += lineHeight;
-    doc.text(`Seats: ${booking.seats.join(", ")}`, 20, y); y += lineHeight;
+    doc.text(`Seat Numbers: ${booking.seats.join(", ")}`, 20, y); y += lineHeight;
     doc.text(`Transaction ID:`, 20, y); y += 5;
     doc.setFont("courier", "normal");
     doc.text(`${booking.transactionId}`, 20, y); y += lineHeight + 5;
@@ -67,7 +67,7 @@ export default function Mybookings() {
             <div key={b.id} className="border border-gray-200 rounded-xl shadow-md p-5 bg-white hover:shadow-lg transition duration-300">
               <p className="text-lg font-semibold text-blue-700 mb-2">🎬 {b.showTitle}</p>
               <p className="text-sm text-gray-700 mb-1"><strong>Date & Time:</strong> {b.date} @ {b.time}</p>
-              <p className="text-sm text-gray-700 mb-1"><strong>Seats:</strong> {b.seats.join(", ")}</p>
+              <p className="text-sm text-gray-700 mb-1"><strong>Seat Numbers:</strong> {b.seats.join(", ")}</p>
               <p className="text-sm text-gray-700 mb-1 break-all">
                 <strong>Txn ID:</strong>{" "}
                 <code className="bg-gray-100 px-1 py-0.5 rounded text-xs">{b.transactionId}</code>
