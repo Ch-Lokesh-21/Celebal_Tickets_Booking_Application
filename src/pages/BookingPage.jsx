@@ -27,8 +27,8 @@ export default function BookingPage() {
   }, [show?.id]);
 
   const toggleSeat = (seat) => {
-    setSelectedSeats(prev =>
-      prev.includes(seat) ? prev.filter(s => s !== seat) : [...prev, seat]
+    setSelectedSeats((prev) =>
+      prev.includes(seat) ? prev.filter((s) => s !== seat) : [...prev, seat]
     );
   };
 
@@ -71,16 +71,53 @@ export default function BookingPage() {
   if (!show) return <div className="p-6">Invalid show data.</div>;
 
   return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <h2 className="text-xl font-bold mb-4">Select Seats for {show.title}</h2>
-      <SeatGrid selected={selectedSeats} booked={bookedSeats} onSelect={toggleSeat} />
+    <div className="p-4 sm:p-6 max-w-4xl mx-auto">
+      <h2 className="text-2xl font-bold mb-6 text-center">
+        Select Seats for {show.title} Movie
+      </h2>
+
+      {/* Screen indicator */}
+      <div className="bg-gray-300 text-center text-sm py-2 rounded mb-6">
+        Your Screen is Here
+      </div>
+
+      {/* Seat grid */}
+      <div className="overflow-x-auto">
+        <SeatGrid
+          selected={selectedSeats}
+          booked={bookedSeats}
+          onSelect={toggleSeat}
+        />
+      </div>
+
+      {/* Legend */}
+      <div className="flex justify-center gap-6 mt-6 text-sm">
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-5 rounded bg-gray-300 border" />
+          <span>Available</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-5 rounded bg-green-600" />
+          <span>Selected</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-5 rounded bg-red-500" />
+          <span>Booked</span>
+        </div>
+      </div>
+
+      {/* Summary + button */}
       {selectedSeats.length > 0 && (
-        <div className="mt-6">
-          <p>Selected: {selectedSeats.join(", ")}</p>
-          <p>Total: ₹{selectedSeats.length * 200}</p>
+        <div className="mt-4 text-center grid gap-4 sm:grid-cols-1 lg:grid-cols-3 items-center justify-center">
+          <p className="font-medium col-span-1 text-center">
+            Selected: {selectedSeats.join(", ")}
+          </p>
+          <p className="font-medium col-span-1 text-center">
+            Total: ₹{selectedSeats.length * 200}
+          </p>
           <button
             onClick={proceedToPay}
-            className="mt-4 bg-green-600 text-white px-4 py-2 rounded"
+            className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition duration-300 col-span-1 mx-auto cursor-pointer"
           >
             Proceed to Pay
           </button>

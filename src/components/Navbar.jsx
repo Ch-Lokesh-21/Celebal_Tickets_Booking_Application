@@ -6,12 +6,12 @@ export default function Navbar() {
   const { user, logout } = useAuth();
 
   return (
-    <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
+    <nav className="bg-[#3e729a] text-white p-4 flex justify-between items-center">
       <Link to="/" className="font-bold text-xl">🎟 TicketApp</Link>
       <div>
         {user ? (
           <>
-            <Link to="/dashboard" className="mr-4">Dashboard</Link>
+            <Link to="/dashboard" className="mr-4">My Bookings</Link>
             <Link onClick={logout} to="/" className="bg-red-500 px-4 py-3 rounded cursor-pointer">Logout</Link>
           </>
         ) : (

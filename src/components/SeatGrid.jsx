@@ -12,7 +12,7 @@ export default function SeatGrid({ selected, booked, onSelect }) {
             key={seat}
             disabled={isBooked}
             className={`
-              p-2 rounded text-sm 
+              p-2 rounded text-sm cursor-pointer
               ${isBooked ? "bg-red-400 cursor-not-allowed" :
               isSelected ? "bg-green-500" : "bg-gray-200"}
             `}
