@@ -39,6 +39,7 @@ export default function BookingPage() {
       userId: user.uid,
       userEmail: user.email,
       showId: show.id,
+      showPoster: show.poster,
       showTitle: show.title,
       date: show.date,
       time: show.time,
