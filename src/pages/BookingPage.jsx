@@ -114,7 +114,7 @@ export default function BookingPage() {
             Selected: {selectedSeats.join(", ")}
           </p>
           <p className="font-medium col-span-1 text-center">
-            Total: ₹{selectedSeats.length * 200}
+            Total: ₹{selectedSeats.length * 300}
           </p>
           <button
             onClick={proceedToPay}

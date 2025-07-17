@@ -114,7 +114,7 @@ export default function Mybookings() {
                 </div>
                 <button
                   onClick={() => downloadTicket(b)}
-                  className="mt-4 text-sm text-green-600 font-medium hover:underline"
+                  className="mt-4 text-sm text-green-600 font-medium hover:underline cursor-pointer"
                 >
                   ⬇️ Download Ticket Here
                 </button>
