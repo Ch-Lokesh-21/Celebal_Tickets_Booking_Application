@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 import { collection, getDocs } from "firebase/firestore";
 import MovieCard from "../components/MovieCard";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -57,6 +58,8 @@ export default function Home() {
           ))}
         </div>
       )}
+
+      <Footer/>
     </>
   );
 }

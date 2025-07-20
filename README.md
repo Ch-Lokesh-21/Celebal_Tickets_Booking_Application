@@ -1,6 +1,6 @@
-# 🎟️ Ticket Booking Application
+# 🎟️ Tickets Booking Application
 
-A responsive full-stack Ticket Booking Application allowing users to explore shows, book seats securely, and manage their bookings — all with real-time seat locking, payment integration, and downloadable receipts.
+A responsive Ticket Booking Application allowing users to explore shows, book seats securely, and manage their bookings — all with real-time seat locking, payment integration, and downloadable receipts.
 
 ---
 
@@ -100,10 +100,10 @@ VITE_RAZORPAY_KEY_ID=your_key
 ## 📥 Installation & Local Setup
 
 ```bash
-git clone 
-cd 
+git clone https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application.git
+cd Celebal_Tickets_Booking_Application
 npm install
-create `.env` file with 
+create `.env` file 
 # Fill in Firebase + Razorpay keys
 npm run dev
 ```

@@ -9,7 +9,6 @@ import Mybookings from "./pages/Mybookings";
 import Success from "./pages/Success";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
-
 export default function App() {
   return (
     <Router>

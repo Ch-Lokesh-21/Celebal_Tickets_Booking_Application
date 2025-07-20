@@ -36,13 +36,13 @@ export default function Navbar() {
             <>
               <Link
                 to="/"
-                className="text-gray-700 hover:text-blue-600 transition hover:underline"
+                className="text-blue-600 transition hover:underline duration-300"
               >
                 Book
               </Link>
               <Link
                 to="/myBookings"
-                className="text-gray-700 hover:text-blue-600 transition hover:underline"
+                className="text-blue-600 transition hover:underline duration-300"
               >
                 My Bookings
               </Link>
@@ -57,7 +57,7 @@ export default function Navbar() {
             <>
               <Link
                 to="/login"
-                className="text-gray-700 hover:text-blue-600 transition"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
               >
                 Login
               </Link>
