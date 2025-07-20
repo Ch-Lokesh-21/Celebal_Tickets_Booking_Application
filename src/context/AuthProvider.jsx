@@ -1,24 +1,20 @@
-// src/context/AuthContext.jsx
-import { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../firebase/config";
 import {
   onAuthStateChanged,
   signOut,
   sendEmailVerification,
 } from "firebase/auth";
+import { AuthContext } from "./AuthContext";
 
-const AuthContext = createContext();
-
-export const useAuth = () => useContext(AuthContext);
-
-export const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        await user.reload(); // refresh to check email verification
+        await user.reload();
         setUser(user);
       } else {
         setUser(null);
@@ -37,3 +33,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export default AuthProvider;

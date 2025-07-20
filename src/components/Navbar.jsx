@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
@@ -48,7 +48,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={logout}
-                className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-md transition duration-300"
+                className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-md transition duration-300 cursor-pointer"
               >
                 Logout
               </button>

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 import { doc, getDoc, updateDoc, setDoc, arrayUnion } from "firebase/firestore";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 import SeatGrid from "../components/SeatGrid";
 import { initiatePayment } from "../utils/razorpay";
 

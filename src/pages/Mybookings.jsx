@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 import jsPDF from "jspdf";
 import QRCode from "qrcode";
 
@@ -25,7 +25,7 @@ export default function Mybookings() {
         const [dayB, monthB, yearB] = b.date.split("-");
         const dateA = new Date(`${yearA}-${monthA}-${dayA} ${a.time}`);
         const dateB = new Date(`${yearB}-${monthB}-${dayB} ${b.time}`);
-        return dateB - dateA;
+        return dateA - dateB;
       });
 
       setBookings(sorted);

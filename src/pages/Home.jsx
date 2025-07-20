@@ -19,7 +19,7 @@ export default function Home() {
         const [dayB, monthB, yearB] = b.date.split("-");
         const dateA = new Date(`${yearA}-${monthA}-${dayA} ${a.time}`);
         const dateB = new Date(`${yearB}-${monthB}-${dayB} ${b.time}`);
-        return dateB - dateA;
+        return dateA - dateB;
       });
 
       setMovies(sorted);
