@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function MovieCard({ movie }) {
   return (
-    <div className="border-none rounded p-4 shadow-2xl">
+    <div className="border-none rounded p-4 shadow-2xl flex-col flex justify-between">
       <img src={movie.poster} alt={movie.title} className="w-full h-48 object-cover rounded" />
       <h3 className="font-semibold text-lg mt-2">{movie.title}</h3>
       <p className="text-sm text-gray-600">{movie.description}</p>
