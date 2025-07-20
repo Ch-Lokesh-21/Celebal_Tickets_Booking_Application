@@ -34,6 +34,13 @@ export default function Mybookings() {
     if (user) fetchBookings();
   }, [user]);
 
+  const formatTime = (time24) => {
+    const [hour, minute] = time24.split(":").map(Number);
+    const ampm = hour >= 12 ? "PM" : "AM";
+    const hour12 = hour % 12 || 12;
+    return `${hour12}:${minute.toString().padStart(2, "0")} ${ampm}`;
+  };
+
   const downloadTicket = async (booking) => {
     const doc = new jsPDF();
     const qrDataUrl = await QRCode.toDataURL(booking.transactionId);
@@ -48,7 +55,7 @@ export default function Mybookings() {
     y += lineHeight;
     doc.text(`Date: ${booking.date}`, 20, y);
     y += lineHeight;
-    doc.text(`Time: ${booking.time}`, 20, y);
+    doc.text(`Time: ${formatTime(booking.time)}`, 20, y);
     y += lineHeight;
     doc.text(`Seat Numbers: ${booking.seats.join(", ")}`, 20, y);
     y += lineHeight;
@@ -97,7 +104,7 @@ export default function Mybookings() {
                     🎬 {b.showTitle}
                   </p>
                   <p className="text-sm text-gray-700 mb-1">
-                    <strong>Date & Time:</strong> {b.date} @ {b.time}
+                    <strong>Date & Time:</strong> {b.date} @ {formatTime(b.time)}
                   </p>
                   <p className="text-sm text-gray-700 mb-1">
                     <strong>Seat Numbers:</strong> {b.seats.join(", ")}
