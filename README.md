@@ -100,10 +100,10 @@ VITE_RAZORPAY_KEY_ID=your_key
 ## 📥 Installation & Local Setup
 
 ```bash
-git clone 
-cd 
+git clone https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application.git
+cd Celebal_Tickets_Booking_Application
 npm install
-create `.env` file with 
+create `.env` file 
 # Fill in Firebase + Razorpay keys
 npm run dev
 ```
