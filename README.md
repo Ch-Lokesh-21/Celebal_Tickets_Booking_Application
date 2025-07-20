@@ -1,6 +1,6 @@
-# 🎟️ Ticket Booking Application
+# 🎟️ Tickets Booking Application
 
-A responsive full-stack Ticket Booking Application allowing users to explore shows, book seats securely, and manage their bookings — all with real-time seat locking, payment integration, and downloadable receipts.
+A responsive Ticket Booking Application allowing users to explore shows, book seats securely, and manage their bookings — all with real-time seat locking, payment integration, and downloadable receipts.
 
 ---
 
