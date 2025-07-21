@@ -1,4 +1,3 @@
-// src/pages/Register.jsx
 import { useState } from "react";
 import { auth } from "../firebase/config";
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
@@ -8,12 +7,33 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [err, setErr] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   const handleRegister = async (e) => {
     e.preventDefault();
+    setErr("");
+
+    if (!emailRegex.test(email)) {
+      return setErr("Please enter a valid email address.");
+    }
+
+    if (!passwordRegex.test(password)) {
+      return setErr(
+        "Password must be at least 8 characters and include one uppercase, one lowercase, one number, and one special character."
+      );
+    }
+
+    if (password !== confirmPassword) {
+      return setErr("Passwords do not match.");
+    }
+
     try {
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
       await sendEmailVerification(userCred.user);
@@ -30,7 +50,7 @@ export default function Register() {
           Create an Account ✨
         </h2>
 
-        {err && <p className="text-red-500 text-sm text-center mb-2">{err}</p>}
+        
 
         <form onSubmit={handleRegister} className="flex flex-col gap-5">
           <input
@@ -42,7 +62,7 @@ export default function Register() {
             required
           />
 
-          {/* Password Input with Icon */}
+          {/* Password Input */}
           <div className="relative">
             <input
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition pr-10 text-sm sm:text-base"
@@ -60,9 +80,29 @@ export default function Register() {
             </div>
           </div>
 
+          {/* Confirm Password Input */}
+          <div className="relative">
+            <input
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition pr-10 text-sm sm:text-base"
+              type={showPassword ? "text" : "password"}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Confirm Password"
+              required
+            />
+            <div
+              className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
+            </div>
+          </div>
+
+          {err && <p className="text-red-500 text-sm text-center mb-2">{err}</p>}
+
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-md text-sm sm:text-base"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-md text-sm sm:text-base cursor-pointer"
           >
             Register
           </button>
