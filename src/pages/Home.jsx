@@ -40,6 +40,8 @@ export default function Home() {
 
       <div className="max-w-2xl mx-auto px-4 mb-6">
         <input
+          id="search"
+          name="search"
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}

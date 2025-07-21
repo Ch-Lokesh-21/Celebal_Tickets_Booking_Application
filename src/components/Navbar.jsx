@@ -37,7 +37,7 @@ export default function Navbar() {
                 to="/"
                 className="text-blue-600 transition hover:underline duration-300"
               >
-                Book
+                Home
               </Link>
               <Link
                 to="/myBookings"
@@ -81,7 +81,7 @@ export default function Navbar() {
                 onClick={closeMenu}
                 className="block text-gray-700 hover:text-blue-600 transition hover:underline"
               >
-                Book
+                Home
               </Link>
               <Link
                 to="/myBookings"
@@ -105,7 +105,7 @@ export default function Navbar() {
               <Link
                 to="/login"
                 onClick={closeMenu}
-                className="block text-gray-700 hover:text-blue-600 transition"
+                className="block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
               >
                 Login
               </Link>

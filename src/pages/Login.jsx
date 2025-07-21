@@ -40,6 +40,8 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address"
             required
+            id="email"
+            name="email"
           />
 
           {/* Password Input with Show/Hide Icon */}
@@ -51,6 +53,8 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               required
+              id="password"
+              name="password"
             />
             <div
               className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500"
