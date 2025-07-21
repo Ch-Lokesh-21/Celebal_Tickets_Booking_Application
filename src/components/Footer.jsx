@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

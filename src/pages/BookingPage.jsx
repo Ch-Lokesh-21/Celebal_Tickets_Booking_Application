@@ -1,4 +1,3 @@
-// src/pages/BookingPage.jsx
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/config";

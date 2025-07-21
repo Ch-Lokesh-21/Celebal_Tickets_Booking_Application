@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 import { collection, getDocs } from "firebase/firestore";

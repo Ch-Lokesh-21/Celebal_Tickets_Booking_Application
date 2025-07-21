@@ -1,4 +1,3 @@
-// src/components/SeatGrid.jsx
 export default function SeatGrid({ selected, booked, onSelect }) {
   const seats = Array.from({ length: 64 }, (_, i) => i + 1);
 

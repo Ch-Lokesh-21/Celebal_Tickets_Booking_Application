@@ -1,4 +1,3 @@
-// src/pages/Success.jsx
 import { useLocation, Link } from "react-router-dom";
 
 export default function Success() {

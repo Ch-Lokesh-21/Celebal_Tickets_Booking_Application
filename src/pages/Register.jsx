@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { auth } from "../firebase/config";
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 export default function Register() {
@@ -110,9 +110,9 @@ export default function Register() {
 
         <p className="mt-6 text-sm text-center text-gray-600">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-600 hover:underline">
+          <Link to="/login" className="text-blue-600 hover:underline">
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </div>
