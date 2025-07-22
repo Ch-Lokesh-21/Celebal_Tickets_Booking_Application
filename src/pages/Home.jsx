@@ -3,7 +3,7 @@ import { db } from "../firebase/config";
 import { collection, getDocs } from "firebase/firestore";
 import MovieCard from "../components/MovieCard";
 import Footer from "../components/Footer";
-
+import { CiSearch } from "react-icons/ci";
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
@@ -45,7 +45,7 @@ export default function Home() {
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search Movies ... "
+          placeholder={"Search Movies... "}
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
         />
       </div>

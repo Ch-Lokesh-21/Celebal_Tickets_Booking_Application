@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/useAuth";
 import { HiMenu, HiX } from "react-icons/hi";
+import { IoTicketOutline } from "react-icons/io5";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -16,10 +17,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl sm:text-2xl font-bold text-blue-600"
+          className="text-xl sm:text-2xl font-bold text-blue-600 flex justify-center items-center gap-1"
           onClick={closeMenu}
         >
-          🎟 Tickets Booking Application
+          <IoTicketOutline/> Tickets Booking Application
         </Link>
 
         {/* Mobile Menu Toggle */}

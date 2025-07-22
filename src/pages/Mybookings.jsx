@@ -4,6 +4,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { useAuth } from "../context/useAuth";
 import jsPDF from "jspdf";
 import QRCode from "qrcode";
+import { GoDownload } from "react-icons/go";
 
 export default function Mybookings() {
   const { user } = useAuth();
@@ -120,9 +121,9 @@ export default function Mybookings() {
                 </div>
                 <button
                   onClick={() => downloadTicket(b)}
-                  className="mt-4 text-sm text-green-600 font-medium hover:underline cursor-pointer"
+                  className="mt-4 text-sm text-green-600 font-medium hover:underline cursor-pointer flex items-center justify-center gap-1"
                 >
-                  ⬇️ Download Ticket Here
+                  <GoDownload/> Download Ticket Here
                 </button>
               </div>
             </div>
