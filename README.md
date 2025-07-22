@@ -2,8 +2,6 @@
 
 A responsive Ticket Booking Application allowing users to explore shows, book seats securely, and manage their bookings — all with real-time seat locking, payment integration, and downloadable receipts.
 
-🌐 **[Live Demo](#)**
-
 ---
 
 ## 📘 Project Overview
@@ -41,23 +39,31 @@ Developed as a complete movie/show ticketing platform where:
 ## 📸 Screenshots
 
 1. **Homepage**
-   ![Homepage]()
+   ![Homepage](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/home_page.png)
 
-2. **Show Details Page**
-   ![Details]()
+2. **Register Page**
+   ![register](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/register.png)
 
-3. **Seat Selection**
-   ![Seat Selection]()
+3. **Verification Page**
+   ![verification](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/verification_page.png)
 
-4. **Razorpay Checkout**
-   ![Payment]()
+4. **Login Page**
+   ![login](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/login_page.png)
 
-5. **Booking Receipt PDF**
-   ![Receipt]()
+5. **Movie Page**
+   ![moview](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/movie_page.png)
 
-6. **User Dashboard**
-   ![Dashboard]()
+6. **Selection Page**
+   ![Dashboard](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/select_seats.png)
 
+7. **Payment Page**
+   ![payment](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/payment_page.png)
+
+8. **Success Page**
+   ![success](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/success_page.png)
+
+9. **My Bookings**
+   ![myBookings](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/my_bookings_page.png)
 ---
 ## 🧰 Tech Stack
 
