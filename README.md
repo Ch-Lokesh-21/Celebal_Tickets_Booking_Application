@@ -57,7 +57,7 @@ Developed as a complete movie/show ticketing platform where:
    ![Dashboard](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/select_seats.png)
 
 7. **Payment Page**
-   ![payment](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/payment_page.png)
+   ![payment](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/2db284e7681e5e49b709fc9ecda443ec6ddc9adf/public/payment_page.png)
 
 8. **Success Page**
    ![success](https://github.com/Ch-Lokesh-21/Celebal_Tickets_Booking_Application/blob/d7845a278b3bd57555b680db4a02b5e97056ec8c/public/success_page.png)
